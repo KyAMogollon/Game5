@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 29890e4dcb7492b4693094474c180ed2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - CARTOON FREE
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 97934c2308e299d49a94a21423f3adbd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

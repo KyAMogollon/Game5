@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
     public int numberRandomObs;
     public int numberRandomPt;
     private float timeToReset = 0;
-    private float timeToReturnPosition = 3;
+    public float timeToReturnPosition = 3;
     public int score = 0;
     bool isPause=true;
     // Start is called before the first frame update
     void Start()
     {
-        puntaje.text = "Puntaje: 0";
+        puntaje.text = "Score: 0";
         Time.timeScale = 1;
     }
 
@@ -32,12 +32,13 @@ public class GameManager : MonoBehaviour
             Instantiate(Obstaculos[numberRandomObs],PuntosSpawns[numberRandomPt].transform.position,Quaternion.identity);
             timeToReset = 0;
         }
+        CheckScore();
         
     }
     public void Score()
     {
         score = score + 1;
-        puntaje.text = "Puntaje: " + score;
+        puntaje.text = "Score: " + score;
     }
     void NumberRandomsObstaculos()
     {
@@ -62,6 +63,25 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
             isPause =true;
+        }
+    }
+    void CheckScore()
+    {
+        if(score == 15)
+        {
+            timeToReturnPosition = 2.5f;
+        }
+        if(score == 30)
+        {
+            timeToReturnPosition = 2;
+        }
+        if(score == 45)
+        {
+            timeToReturnPosition = 1.5f;
+        }
+        if(score == 60)
+        {
+            timeToReturnPosition = 1;
         }
     }
 }
