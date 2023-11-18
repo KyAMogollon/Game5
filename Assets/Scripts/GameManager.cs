@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject[] Obstaculos;
@@ -12,10 +13,12 @@ public class GameManager : MonoBehaviour
     private float timeToReset = 0;
     private float timeToReturnPosition = 3;
     public int score = 0;
+    bool isPause=true;
     // Start is called before the first frame update
     void Start()
     {
-        puntaje.text = "Puntaje: 0"; 
+        puntaje.text = "Puntaje: 0";
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -43,5 +46,22 @@ public class GameManager : MonoBehaviour
     void NumberRandomsPuntos()
     {
         numberRandomPt = Random.Range(0, Obstaculos.Length);
+    }
+    public void ResetScene()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void Pause()
+    {
+        if (isPause == true)
+        {
+            Time.timeScale = 0;
+            isPause = false;
+        }else if(isPause == false)
+        {
+            Time.timeScale = 1;
+            isPause =true;
+        }
     }
 }
